@@ -1,0 +1,54 @@
+<button class="btn btn-secondary mt-3" [routerLink]="['/movies']"><i class="bi bi-house"></i> Back</button>
+
+<div *ngIf="movieDetails">
+    <div>
+        <h2>{{movieDetails.title}}</h2>
+        <div class="row">
+            <div class="col-md-3">
+                <img src="{{movieDetails.poster}}" alt="movie-poster" class="img-fluid" id="img">
+            </div>
+            <div class="col-md-9">
+                <b>Summary</b>
+                <p>{{movieDetails.summary}}</p>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <h4 class="d-flex justify-content-center">Details</h4>
+        <div class="input-group  align-items-center">
+            <div class="input-group-prepend col-md-3">
+                <span class="input-group-text d-flex align-items-center justify-content-center">Box Office</span>
+            </div>
+            <input type="text" readonly class="form-control" aria-label="Box Office" value="{{movieDetails.box_office | budget}}">
+        </div>
+
+        <div class="input-group  align-items-center">
+            <div class="input-group-prepend col-md-3">
+                <span class="input-group-text d-flex align-items-center justify-content-center">Budget</span>
+            </div>
+            <input type="text" readonly class="form-control" aria-label="Budget" value="{{movieDetails.budget | budget}}">
+        </div>
+
+        <div class="input-group  align-items-center">
+            <div class="input-group-prepend col-md-3">
+                <span class="input-group-text d-flex align-items-center justify-content-center">Duration</span>
+            </div>
+            <input type="text" readonly class="form-control" aria-label="Duration" value="{{movieDetails.duration | duration}}">
+        </div>
+
+        <div class="input-group  align-items-center">
+            <div class="input-group-prepend col-md-3">
+                <span class="input-group-text d-flex align-items-center justify-content-center">Producers</span>
+            </div>
+            <input type="text" readonly class="form-control" aria-label="Producers" value="{{movieDetails.producers}}">
+        </div>
+
+        <div class="input-group align-items-center">
+            <div class="input-group-prepend col-md-3">
+                <span class="input-group-text d-flex align-items-center justify-content-center">Cinematographers</span>
+            </div>
+            <input type="text" readonly class="form-control" aria-label="Cinematographers" value="{{movieDetails.cinematographers}}">
+        </div>
+    </div>
+</div>
