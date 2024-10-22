@@ -17,13 +17,13 @@ import { Router } from '@angular/router';
   styleUrl: './movie-list.component.css'
 })
 export class MovieListComponent implements OnInit {
-  movieList: Observable<Movie[]> | null = null;
+  movieList$: Observable<Movie[]> | null = null;
   movieName: string = '';
   movieReleaseDate: string = '';
   constructor(private movieService: MovieService, private router: Router) { }
 
   ngOnInit(): void {
-    this.movieList = this.movieService.getMovieList();
+    this.movieList$ = this.movieService.getMovieList();
   }
 
   clearFilter() {
