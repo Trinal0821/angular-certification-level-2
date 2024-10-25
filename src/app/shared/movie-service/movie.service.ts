@@ -14,7 +14,7 @@ export class MovieService {
     return this.http.get<Movie[]>('movies');
   }
 
-  getMoveDetails(movieId : string | null) : Observable<Movie> {
+  getMovieDetails(movieId : string | null) : Observable<Movie> {
     return this.http.get<Movie>("movies/" + movieId)
   }
 

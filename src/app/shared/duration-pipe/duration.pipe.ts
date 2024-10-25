@@ -6,6 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class DurationPipe implements PipeTransform {
 
+  /*
+   * Converts the input string (ex. 153 mins) to hours and mins
+  */
   transform(value: string): string {
     const num = Number(value);
     const hours = Math.floor(num / 60);

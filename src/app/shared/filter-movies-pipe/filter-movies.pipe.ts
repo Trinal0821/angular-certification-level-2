@@ -7,6 +7,9 @@ import { Movie } from '../movie-model/movie.model';
 })
 export class FilterMoviesPipe implements PipeTransform {
 
+  /*
+   * Filters out the movie
+  */
   transform(movies: Movie[] | null, searchText: string[]): Movie[] {
 
     if (movies == null) {
